@@ -11,7 +11,12 @@ var url = 'mongodb://localhost:27017/';
 
 var x = require("express");
 
+var bodyParser = require('body-parser');
+
 var server = x();
+
+server.use(bodyParser.urlencoded({extended:true}));
+server.use(bodyParser.json());
 
 var router = x.Router();
 
